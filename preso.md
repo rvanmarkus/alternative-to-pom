@@ -113,9 +113,19 @@ Your UI probably not. Is it a REST api? GraphQL API? Database schemas? Remote pr
 
 ### Only use your UI for the actual thing you are E2E testing 
 
+![bottom 50%](./assets/not-so-blackbox.png)
+
+---
+
+### Drop the black box
+
+### Embrace all api's
+
 ---
 
 ### Are these api's (apart from stable) also typed? That is even better.
+
+### This combo provides great DX
 
 ```js
 export const createCaseApi = (data: CaseCreateUpdate) => {...}
