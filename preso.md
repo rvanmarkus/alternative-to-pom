@@ -4,7 +4,6 @@ marp: true
 
 # A alternative to Page Object Models
 ![bg opacity](./assets/gradient.jpg)
-[image](./assets/change-my-mind.jpg)
 
 ---
 # Why Page Objects (Models)
@@ -19,16 +18,16 @@ marp: true
 
 ---
 
-```js
+```ts
 class LoginPage {
     navigateTo() {
         cy.visit("/login");
     }
 
-    enterUsername(username) {
+    enterUsername(username: string) {
         cy.get("input[name='user']").type(username); 
     }
-    enterPassword(password) {
+    enterPassword(password: string) {
         cy.get("[data-testid='password']").type(password); 
     }
     submit() {
@@ -112,7 +111,7 @@ Your UI probably not. Is it a REST api? GraphQL API? Database schemas? Remote pr
 
 ### Use those api's to setup your test
 
-### Only use your UI for the actual thing you are E2E testing 
+### Only use your UI for the actual thing you are E2E testing
 
 ![bottom 50%](./assets/not-so-blackbox.png)
 
@@ -205,3 +204,5 @@ describe("Some page where a user needs to be logged in", () => {
 > Which usecases are really benefitting from POM?
 
 > My application does not have any blind users, why should I care?
+
+> Shouldn't my tests be more 'black box' / loosly coupled?
