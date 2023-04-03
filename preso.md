@@ -65,7 +65,7 @@ class LoginPage {
  - Changes to implementation will effect your tests (even without functional changes) 
  - Selectors are abstracted away; another level of complexity
  - Learning curve (for new developers)
- - DX out of the box is bad; classes, using singletons, syncing state between driver and POM classes
+ - DX out of the box is bad; classes, using singletons, syncing state between screen and POM classes
  - Redefining your whole application (domain) in yet another structure
 
 ---
@@ -76,14 +76,14 @@ class LoginPage {
 
 ---
 
-POM hides my ugly queries
-=> Improved test selectors/queries which utilize html semantics of a webpage
+> **POM hides my ugly queries**
+:point_right: Improved test selectors/queries which utilize html semantics of a webpage
 
-POM makes duplicating queries easy
-=> E2e tests are integrated in development process and tests are covered on the appropiate level (testing pyramid)
+> **POM makes duplicating queries easy**
+:point_right: E2e tests are integrated in development process and tests are covered on the appropiate level (testing pyramid)
 
-POM makes my tests less brittle
-=> Directly integrate test—setup with application and depend on stable api's
+> **POM makes my tests less brittle**
+:point_right: Directly integrate test—setup with application and depend on stable api's
 
 
 ---
@@ -160,3 +160,28 @@ describe("some input field", () => {
 ### Thinking about these things naturally makes E2E suites way more DRY.
 
 ### You will see 1 to 3 duplications of certain specific selectors.
+
+
+--- 
+```js
+describe("Some page where a user needs to be logged in", () => {
+  beforeEach(() => {
+    cy.loginUser('user1');
+  });
+
+  it('should show a list of my items', () => ...)
+
+
+});
+
+```
+
+
+---
+# Discussion
+
+> Are using copy/text as selectors a bad idea?
+
+> Which usecases are really benefitting from POM?
+
+> My application does not have any blind users, why should I care?
