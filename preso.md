@@ -99,32 +99,45 @@ There already is a builtin semantic API available in the browser which is used b
 - Hide implementations details like classnames, test-ids, specific CSS queries
 
 ---
+# Directly integrate test—setup with application and depend on stable api's
 
-```ts
-describe("Login", () => {
-  it("should allow a user to log in", () => {
-    cy.visit("/login");
 
-    // two example selectors which are using accessbility features
-    cy.findByRole("textbox", { name: "username" }).type("user");
-    
-    // can be useful for repeating form elements
-    cy.findByLabelText(/password/i).type("password"); 
-    
-    // asserts button contains Submit
-    cy.findByRole("button", { name: /Submit/i }).click(); 
-  });
-});
-```
 ---
 
-# E2e tests are integrated in development process and tests are covered on the appropiate level (testing pyramid)
+# E2e tests are integrated in development process and  covered on the appropiate level
+
+---
+
+### In legacy orgs, testing is a different concern for a different team maybe
+
+### In modern teams, testing is integrated and clode to development.
 ![bg right 90%](./assets/waterfall.png)
 
 
 ---
-![bg center 90%](./assets/pyramid.png)
+### Teams pick the right tool for the job
+
+![bg right 100%](./assets/pyramid.png)
+
 
 ---
-# Directly integrate test—setup with application and depend on stable api's
 
+### What does your E2E suite actually needs to cover?
+
+### What can be tested on a deeper level, with a faster test?
+
+```js
+describe("some input field", () => {
+  it("Should accept strings", () => {})
+  it("Should not accept weird characters", () => {})
+  it("Should cleanup trailing whitespace", () => {})
+  it("Should accept max 100 characters", () => {})
+  ...
+})
+```
+
+---
+
+### Thinking about these things naturally makes E2E suites way more DRY.
+
+### You will see 1 to 3 duplications of certain specific selectors.
