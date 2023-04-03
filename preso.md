@@ -99,12 +99,31 @@ There already is a builtin semantic API available in the browser which is used b
 - Hide implementations details like classnames, test-ids, specific CSS queries
 
 ---
-# Directly integrate test—setup with application and depend on stable api's
-
+# 2) Directly integrate test—setup with application and depend on stable api's
 
 ---
 
-# E2e tests are integrated in development process and  covered on the appropiate level
+### Ask yourself: What are the most stable api's of your application?
+
+Your UI probably not. Is it a REST api? GraphQL API? Database schemas? Remote procedures?
+
+---
+
+### Use those api's to setup your test
+
+### Only use your UI for the actual thing you are E2E testing 
+
+---
+
+### Are these api's (apart from stable) also typed? That is even better.
+
+```js
+export const createCaseApi = (data: CaseCreateUpdate) => {...}
+```
+
+---
+
+# 3) E2e tests are integrated in development process and  covered on the appropiate level
 
 ---
 
