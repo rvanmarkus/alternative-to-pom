@@ -76,15 +76,16 @@ class LoginPage {
 
 ---
 
-> **POM hides my ugly queries**
-:point_right: Improved test selectors/queries which utilize html semantics of a webpage
+# Three pillars
 
-> **POM makes duplicating queries easy**
-:point_right: E2e tests are integrated in development process and tests are covered on the appropiate level (testing pyramid)
+**POM hides my ugly queries** :point_right:
+:one: Improved test selectors/queries which utilize html semantics of a webpage
 
-> **POM makes my tests less brittle**
-:point_right: Directly integrate test—setup with application and depend on stable api's
+**POM makes my tests less brittle** :point_right:
+:two: Directly integrate test—setup with application and depend on stable api's'
 
+**POM makes duplicating queries easy** :point_right:
+:three: E2e tests are integrated in development process and tests are covered on the appropiate level (testing pyramid)
 
 ---
 
@@ -186,6 +187,15 @@ describe("Some page where a user needs to be logged in", () => {
 
 ```
 
+---
+
+# What extra brings POM?
+
+### These three pillars made POM useless for our client.
+- Very easy querying against the DOM
+- Fast and DX friendly test setup
+- No explosion of duplication
+- Way less boilerplate
 
 ---
 # Discussion
