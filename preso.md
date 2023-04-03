@@ -100,6 +100,24 @@ There already is a builtin semantic API available in the browser which is used b
 
 ---
 
+```ts
+describe("Login", () => {
+  it("should allow a user to log in", () => {
+    cy.visit("/login");
+
+    // two example selectors which are using accessbility features
+    cy.findByRole("textbox", { name: "username" }).type("user");
+    
+    // can be useful for repeating form elements
+    cy.findByLabelText(/password/i).type("password"); 
+    
+    // asserts button contains Submit
+    cy.findByRole("button", { name: /Submit/i }).click(); 
+  });
+});
+```
+---
+
 # E2e tests are integrated in development process and tests are covered on the appropiate level (testing pyramid)
 ![bg right 90%](./assets/waterfall.png)
 
