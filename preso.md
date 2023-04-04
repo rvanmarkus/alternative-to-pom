@@ -3,6 +3,7 @@ marp: true
 ---
 
 # A alternative to Page Object Models
+### Jim Bloemkolk & Robbert van Markus
 ![bg opacity](./assets/gradient.jpg)
 
 ---

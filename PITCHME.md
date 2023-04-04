@@ -4,8 +4,7 @@ marp: true
 
 # A alternative to Page Object Models
 ![bg opacity](./assets/gradient.jpg)
-[image](./assets/change-my-mind.jpg)
-
+## Jim Bloemkolk & Robbert van Markus
 ---
 # Why Page Objects (Models)
 
